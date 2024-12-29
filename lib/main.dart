@@ -1,9 +1,9 @@
+import 'package:fetch_data/View/HomeScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:fetch_data/Services/ApiService.dart';
-import 'package:fetch_data/Model/UserModel.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Scaffold(
-        body: Center() ,
-      ),
+      home: Homescreen(),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:fetch_data/Model/UserModel.dart';
 import 'package:http/http.dart' as http;
 
 class Apiservice {
-  static Future<List<Usermodel>> fetch_User() async {
+   Future<List<Usermodel>> fetch_User() async {
     final baseUrl = Uri.parse('https://jsonplaceholder.typicode.com/users');
     try {
       final response = await http.get(baseUrl);
