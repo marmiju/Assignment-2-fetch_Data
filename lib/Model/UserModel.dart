@@ -5,6 +5,8 @@ class Usermodel {
   final String email;
   final Company company;
 
+    // User > Company > name ,catchPhrase , bs 
+
   Usermodel({
     required this.id,
     required this.name,

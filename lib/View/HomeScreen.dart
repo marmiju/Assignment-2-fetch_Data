@@ -1,21 +1,19 @@
-import 'package:fetch_data/Controller/Provider/UserProvider.dart';
+import 'package:fetch_data/Controller/Riverpod/UserProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Homescreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final userData = ref.watch(UserProvider);
+    final usersData = ref.watch(UserProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('JsonPlaceHolder/User'),
-        
+        title: Text('JsonPlaceHolder/Users'),  
       ),
-       body:userData.when(
+       body:usersData.when(
         data: (data)=>ListView.builder(
           itemCount: data.length,
           itemBuilder: (_,index){
-            //sapareate user One by One
             final user = data[index];
            return Padding(
              padding: const EdgeInsets.symmetric(horizontal: 16),
